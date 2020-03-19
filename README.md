@@ -33,7 +33,7 @@ Usage of server:
 
 ## `server` - starts an HTTP server that listens for WebSocket clients to subscribe and messages to be published
 ```
-$ pubsub server
+$ pubsub server -addr=":8080"
 [PUBSUB SERVER]: 2020/03/19 01:36:03 listening on: :8080
 [PUBSUB SERVER]: 2020/03/19 01:36:10 new subscriber [count=1]: 127.0.0.1:55127
 [PUBSUB SERVER]: 2020/03/19 01:36:18 publish to [count=1] subscribers: Hello there
@@ -45,7 +45,7 @@ Endpoints:
 - `/publish` - HTTP POST endpoint for messages to be published and sent to all subscribed WebSocket clients
 
 
-## `client` - subscribes to websocket server and is deliverd published messages
+## `client` - subscribes to websocket server and is delivered published messages
 ```
 $ pubsub client
 [PUBSUB CLIENT: 127.0.0.1:55127]: 2020/03/19 01:36:10 subscribed waiting for published messages
@@ -54,7 +54,6 @@ $ pubsub client
 ## `publish` messages
 
 ```
-Usage:
 $ pubsub publish -message="Hello there"
 [PUBSUB PUBLISHER]: 2020/03/19 01:39:14 Published message[Hello there] to [:8080]
 ```
