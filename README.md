@@ -1,3 +1,5 @@
+[![codecov](https://codecov.io/gh/dougnukem/pubsub/branch/master/graph/badge.svg)](https://codecov.io/gh/dougnukem/pubsub)
+
 # pubsub server
 Implements a PubSub HTTP server that manages a collection of in-memory WebSocket clients that subscribe, and a publish endpoint that will deliver a message to all subscribed HTTP WebSocket clients.
 
