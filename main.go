@@ -105,7 +105,7 @@ func publishCmd(args ...string) {
 		l.Fatalf("Error publishing message: %s", err)
 	}
 
-	fmt.Printf("pubsub %s: addr[%s] message[%s]\n", cmd.Name(), addr, message)
+	l.Printf("Published message[%s] to [%s]", message, addr)
 }
 
 func printfUsageExit(cmd *flag.FlagSet, fmtMsg string, argv ...interface{}) {

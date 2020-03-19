@@ -33,7 +33,11 @@ Usage of server:
 
 ## `server` - starts an HTTP server that listens for WebSocket clients to subscribe and messages to be published
 ```
-$ go run -race main.go server -addr=:8080
+$ pubsub server
+[PUBSUB SERVER]: 2020/03/19 01:36:03 listening on: :8080
+[PUBSUB SERVER]: 2020/03/19 01:36:10 new subscriber [count=1]: 127.0.0.1:55127
+[PUBSUB SERVER]: 2020/03/19 01:36:18 publish to [count=1] subscribers: Hello there
+[PUBSUB SERVER]: 2020/03/19 01:37:55 new subscriber [count=2]: 127.0.0.1:55218
 ```
 
 Endpoints:
@@ -43,11 +47,14 @@ Endpoints:
 
 ## `client` - subscribes to websocket server and is deliverd published messages
 ```
-$ go run -race main.go client -addr=:8080
+$ pubsub client
+[PUBSUB CLIENT: 127.0.0.1:55127]: 2020/03/19 01:36:10 subscribed waiting for published messages
+[PUBSUB CLIENT: 127.0.0.1:55127]: 2020/03/19 01:36:18 client received message: Hello there
 ```
 ## `publish` messages
 
 ```
 Usage:
-$ go run -race main.go publish -addr=:8080 -message="Message to publish to clients
+$ pubsub publish -message="Hello there"
+[PUBSUB PUBLISHER]: 2020/03/19 01:39:14 Published message[Hello there] to [:8080]
 ```
